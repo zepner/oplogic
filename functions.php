@@ -1,15 +1,17 @@
 
 <?php
-function page($page_uri) {
+function page($page) {
 	include_once('settings.php');
-	$sections = [];
-	$page = (strlen($page_uri) == 0) ? 'home' : $page_uri;
-	$page_settings = (isset($settings['pages'][$page])) ? $settings['pages'][$page] : null;
-	if (!$page_settings) {
-		return '404';
+
+	$page_settings = dirname(__FILE__) . '/settings-' . $page . '.php';
+	if (file_exists($page_settings)) {
+		include $page_settings;
+	} else {
+		return '<h1>404: Page not found.</h1>';
 	}
 
-	foreach ($page_settings['sections'] as $key => $value) {
+	$sects = [];
+	foreach ($sections as $key => $value) {
 		$tags = [];
 		foreach ($value as $k => $v) {
 			$attrs = [];
@@ -19,16 +21,23 @@ function page($page_uri) {
 			$tag = (strpos($k, '-')) ? explode('-', $k)[0] : $k;
 			$tags[] = "\n" . '<' . $tag . ' ' . implode(' ', $attrs) . '>' . $v['value'] . '</' . $tag . '>';
 		}
-		$sections[] = "\n" . '<div class="section" id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
+		$sects[] = "\n" . '<div class="section" id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
 	}
 
-	return head($page) . '<div id="sections">' . implode("\n", $sections) . '</div>' . foot($page);
+	return '<div id="sections">' . implode("\n", $sects) . '</div>';
 }
 
-function head($page) {
-	include_once('head.php');
-}
-
-function foot($page) {
-	include_once('foot.php');
+function get_menu($page) {
+	$menu = [
+		'home' => 'What',
+		'methodology' => 'How',
+		'principals' => 'Who',
+		'contact' => '15 Minutes'
+	];
+	$lis = '';
+	foreach ($menu as $key => $value) {
+		$active = ($key == $page);
+		$lis .= '<li class="' . $key . '"><a class="' . ($active ? 'active' : '') .'" href="/' . $key . '">' . $value . '</a></li>';
+	}
+	return $lis;
 }
