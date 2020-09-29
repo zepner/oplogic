@@ -134,7 +134,7 @@ $sections = [
 		'p' => [
 			'attrs' => [
 				'rel' => 'home:stories:p'					],
-			'value' => 'Automation that directly trims the time it takes for employees to accomplish their tasks, providing increased reliability and job satisfaction.'
+			'value' => 'Automation that directly trims workers\' average task time, leading to increased reliability and job satisfaction.'
 		],
 		'hr' => [
 			'attrs' => [
@@ -182,7 +182,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'home:recommendations:p'
 			],
-			'value' => 'Automation that directly trims the time it takes for employees to accomplish their tasks, providing increased reliability and job satisfaction.'
+			'value' => 'Custom automation software built from the ground up to increase efficiency at every level.'
 		]
 	]
 ];
