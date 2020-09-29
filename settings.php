@@ -15,20 +15,20 @@ $settings['pages'] = [
 					'attrs' => [
 						'rel' => 'home:lead:h1'
 					],
-					'value' => 'Custom, License-Free ERP Systems'
+					'value' => 'Business processes, documented and automated.'
 				],
-				'p' => [
+				'h4' => [
 					'attrs' => [
 						'rel' => 'home:lead:p'
 					],
-					'value' => 'Don’t sign that contract just yet! Another expensive mistake is not the answer. Some of these “solutions” end up costing more than they save. It\'s time to map out what you\'ve already got.'
+					'value' => 'We help trim the time spent on daily tasks by automating steps that humans shouldn\'t be doing anyway.'
 				],
 				'div' => [
 					'attrs' => [
-						'rel' => 'home:lead:img',
-						'id' => 'hero_img'
+						'rel' => 'home:lead:cta',
+						'class' => 'cta'
 					],
-					'value' => '<img src="img/photo.png" />'
+					'value' => '<a href="/methodology">Our methodology</a> <span class="action">&rarr;</span>'
 				]
 			],
 			'lead-follow' => [

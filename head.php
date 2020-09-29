@@ -7,13 +7,20 @@
 <body>
 	<header>
 		<div class="header-inner">
-			<div id="logo"><span>Operational <span>Logic</span></span></div>
+			<div id="logo"><span>Ops<span>_Logic</span></span></div>
 			<div id="menu">
 				<ul>
-					<li class="home"><a>What</a></li>
-					<li class="how"><a>How</a></li>
-					<li class="who"><a>Who</a></li>
-					<li class="contact"><a>15 Minutes</a></li>
+					<?php
+						$menu = [
+							'home' => 'What',
+							'methodology' => 'How',
+							'principals' => 'Who',
+							'contact' => '15 Minutes'
+						];
+						foreach ($menu as $key => $value) {
+							print '<li class="' . $key . '"><a href="/' . $key . '">' . $value . '</a></li>';
+						}
+					?>
 				</ul>
 				<br class="clear" />
 			</div>

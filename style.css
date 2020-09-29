@@ -21,10 +21,10 @@ h1, h2, h3, h4, h5, h6 {
 	color: #211E1A;
 	 line-height: 1.2;
 }
-h1 { font-size: 4rem; }
+h1 { font-size: 3.6rem; }
 h2 { font-size: 3rem; }
 h3 { font-size: 3rem; }
-h4, h5, h6 { font-size: 1.8rem; }
+h4, h5, h6 { font-size: 1.8rem; line-height: 1.4; }
 h5 { opacity: 0.65; }
 p, li, span, td { font-size: 1.4rem; }
 
@@ -40,8 +40,7 @@ header {
 	width: 100%;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	color: #AE2141;
-	text-transform: uppercase;
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -51,14 +50,20 @@ header {
 	margin: auto;
 }
 #logo {
-	font-size: 0.85rem;
-	width: 300px;
+	font-size: 1rem;
+	width: auto;
 	clear: both;
 	float: left;
-	padding-top: 1rem;
+	padding: 5px 10px;
+	margin-top: 0.3rem;
+	border: 3px solid;
 }
 #logo span {
 	font-size: inherit;
+}
+#logo span span {
+	/*opacity: 0.65;*/
+	/*color: #da7aa6;*/
 }
 #menu {
 	float: right;
@@ -72,14 +77,17 @@ header {
 }
 #menu ul li.contact a {
 	border: 1px solid;
-	border-radius: 3rem;
+	/*border-radius: 3rem;*/
+	border-width: 0 0 1px 0;
 }
 #menu ul li a {
 	font-size: 0.85rem;
 	display: block;
 	float: left;
-	padding: 1rem 1.25rem;
-	margin-right: 1rem;
+	padding: 1rem 0 0.5rem;
+	margin-left: 2rem;
+	color: inherit;
+	text-decoration: none;
 }
 
 .cta a {
@@ -109,9 +117,9 @@ header {
 	padding-top: 10%;
 }
 #home_lead.section h1 {
-	color: #fff;
+	color: #AE2141;
 }
-#home_lead.section p {
+#home_lead.section h4 {
 	color: #a7a7a7;
 }
 #home_lead.section .cta {
