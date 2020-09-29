@@ -21,7 +21,7 @@ function page($page) {
 			$tag = (strpos($k, '-')) ? explode('-', $k)[0] : $k;
 			$tags[] = "\n" . '<' . $tag . ' ' . implode(' ', $attrs) . '>' . $v['value'] . '</' . $tag . '>';
 		}
-		$sects[] = "\n" . '<div class="section" id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
+		$sects[] = "\n" . '<div class="section ' . $key . '" id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
 	}
 
 	return '<div id="sections">' . implode("\n", $sects) . '</div>';
@@ -32,7 +32,7 @@ function get_menu($page) {
 		'home' => 'What',
 		'methodology' => 'How',
 		'principals' => 'Who',
-		'contact' => '15 Minutes'
+		'contact' => '15 Mins'
 	];
 	$lis = '';
 	foreach ($menu as $key => $value) {

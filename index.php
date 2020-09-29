@@ -9,6 +9,7 @@ $menu = get_menu($page);
 	<link href="style.css" rel="stylesheet"/>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width" />
+	<title><?php print ucwords($page) ?> | Operational Logic</title>
 	</head>
 
 	<body>

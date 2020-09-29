@@ -85,7 +85,8 @@ $sections = [
 		],
 		'p' => [
 			'attrs' => [
-				'rel' => 'home:mapping:p'
+				'rel' => 'home:mapping:p',
+				'class' => 'white'
 			],
 			'value' => 'You\'ll work with a systems architect to map out all of the entities that make up your operation as well as how each part is connected to the whole. <br><br>Then we set up a series of business rules that govern roles and permissions.'
 		],
