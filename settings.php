@@ -38,11 +38,17 @@ $settings['pages'] = [
 					],
 					'value' => 'Transparency, then efficiency'
 				],
-				'p' => [
+				'h4' => [
 					'attrs' => [
-						'rel' => 'home:lead_follow:p'
+						'rel' => 'home:lead_follow:h5'
 					],
-					'value' => 'Make the most of your staff by letting them focus on improvements and not the repetitive procedures that can be automated. Task-level tracking is a great way to guage just how time and money are being spent on floor operations.'
+					'value' => 'Make the most of your staff by having them identify improvements instead of focusing on needlessly repetitive procedures.'
+				],
+				'h5' => [
+					'attrs' => [
+						'rel' => 'home:lead_follow:h4'
+					],
+					'value' => 'Add task-level tracking, and you\'ll know just how much time and money are being spent on floor operations.'
 				]
 			],
 			'methodology' => [
