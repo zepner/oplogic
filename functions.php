@@ -1,8 +1,9 @@
 
 <?php
-function page($page) {
+function page($page_uri) {
 	include_once('settings.php');
 	$sections = [];
+	$page = (strlen($page_uri) == 0) ? 'home' : $page_uri;
 	$page_settings = (isset($settings['pages'][$page])) ? $settings['pages'][$page] : null;
 	if (!$page_settings) {
 		return '404';
@@ -21,7 +22,7 @@ function page($page) {
 		$sections[] = "\n" . '<div class="section" id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
 	}
 
-	return '<div id="sections">' . implode("\n", $sections) . '</div>';
+	return head($page) . '<div id="sections">' . implode("\n", $sections) . '</div>' . foot($page);
 }
 
 function head($page) {

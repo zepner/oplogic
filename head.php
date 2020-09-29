@@ -7,7 +7,7 @@
 <body>
 	<header>
 		<div class="header-inner">
-			<div id="logo"><span>Ops<span>_Logic</span></span></div>
+			<div id="logo"><span>Op<span>_Logic</span></span></div>
 			<div id="menu">
 				<ul>
 					<?php

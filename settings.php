@@ -36,13 +36,13 @@ $settings['pages'] = [
 					'attrs' => [
 						'rel' => 'home:lead_follow:h2'
 					],
-					'value' => 'Transparency, then efficiency'
+					'value' => 'Turn <u>tribal knowledge</u> into documented workflows'
 				],
 				'h4' => [
 					'attrs' => [
 						'rel' => 'home:lead_follow:h5'
 					],
-					'value' => 'Make the most of your staff by having them identify improvements instead of focusing on needlessly repetitive procedures.'
+					'value' => '..and save your staff from needlessly repetitive procedures.'
 				],
 				'h5' => [
 					'attrs' => [
