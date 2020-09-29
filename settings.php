@@ -49,6 +49,13 @@ $settings['pages'] = [
 						'rel' => 'home:lead_follow:h4'
 					],
 					'value' => 'Add task-level tracking, and you\'ll know just how much time and money are being spent on floor operations.'
+				],
+				'div' => [
+					'attrs' => [
+						'rel' => 'home:lead_follow:cta',
+						'class' => 'cta'
+					],
+					'value' => '<a href="/clients">Here\'s how we helped FTDI West</a> <span class="action">&rarr;</span>'
 				]
 			],
 			'methodology' => [
@@ -59,17 +66,17 @@ $settings['pages'] = [
 					],
 					'value' => 'Software development in plain-english'
 				],
-				'h5' => [
-					'attrs' => [
-						'rel' => 'home:methodology:h5'
-					],
-					'value' => 'A system truly built around existing people and processes.'
-				],
 				'h4' => [
 					'attrs' => [
 						'rel' => 'home:methodology:h5'
 					],
 					'value' => 'We\'ll integrate your company\'s existing terminology so no one has to learn a whole new language.'
+				],
+				'h5' => [
+					'attrs' => [
+						'rel' => 'home:methodology:h5'
+					],
+					'value' => 'A system truly built around existing people and processes.'
 				],
 				'div' => [
 					'attrs' => [
@@ -94,10 +101,10 @@ $settings['pages'] = [
 				],
 				'div' => [
 					'attrs' => [
-						'rel' => 'home:mapping:p',
+						'rel' => 'home:mapping:cta',
 						'class' => 'cta'
 					],
-					'value' => '<a href="/methodology">Learn more about this process</a> <span class="action">&rarr;</span>'
+					'value' => '<a class="red" href="/methodology">Learn more about this process</a> <span class="action">&rarr;</span>'
 				]
 			],
 			'partner' => [

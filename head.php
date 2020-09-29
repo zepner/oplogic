@@ -18,7 +18,8 @@
 							'contact' => '15 Minutes'
 						];
 						foreach ($menu as $key => $value) {
-							print '<li class="' . $key . '"><a href="/' . $key . '">' . $value . '</a></li>';
+							$active = ($key == $page);
+							print '<li class="' . $key . '"><a class="' . ($active ? 'active' : '') .'" href="/' . $key . '">' . $value . '</a></li>';
 						}
 					?>
 				</ul>

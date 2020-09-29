@@ -32,7 +32,7 @@ h5 { opacity: 0.65; font-size: 1.4rem; }
 p, li, span, td { font-size: 1.4rem; }
 
 .red {
-	color: #AE2141;
+	color: #AE2141 !important;
 }
 .clear {
 	clear: both;
@@ -50,8 +50,7 @@ p, li, span, td { font-size: 1.4rem; }
 header {
 	position: absolute;
 	width: 100%;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding: 0;
 	color: #fff;
 	font-weight: bold;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans;
@@ -61,6 +60,7 @@ header {
 	max-width: 900px;
 	width: 100%;
 	margin: auto;
+	padding: 2rem 20px;
 }
 #logo {
 	font-size: 1rem;
@@ -70,6 +70,7 @@ header {
 	padding: 5px 10px;
 	margin-top: 0.3rem;
 	border: 3px solid;
+	margin-right: 4rem;
 }
 #logo span {
 	font-size: inherit;
@@ -79,28 +80,32 @@ header {
 	/*color: #da7aa6;*/
 }
 #menu {
-	float: right;
+	
 }
 #menu ul {
 	margin: 0;
 	padding: 0;
+	float: right;
 }
 #menu ul li {
-	display: inline-block;
+	display: inline;
 }
 #menu ul li.contact a {
-	border: 1px solid;
-	/*border-radius: 3rem;*/
-	border-width: 0 0 1px 0;
+	color: #AE2141;
 }
 #menu ul li a {
 	font-size: 0.85rem;
 	display: block;
 	float: left;
-	padding: 1rem 0 0.5rem;
+	padding: 1rem 0 0.25rem;
 	margin-left: 2rem;
 	color: inherit;
 	text-decoration: none;
+}
+
+#menu ul li a.active {
+	border: 1px solid #AE2141;
+	border-width: 0 0 1px 0;
 }
 
 .cta a {
@@ -122,6 +127,7 @@ header {
 	border-bottom: 1px solid;
 	border-width: 0 0 1px 0;
 	padding-bottom: 3px;
+	margin-right: 10px;
 }
 
 
@@ -138,9 +144,6 @@ header {
 #home_lead.section .cta {
 	color: #fff;
 	text-decoration: initial;
-}
-#home_lead.section .section-inner {
-
 }
 
 #home_lead-follow.section,
@@ -162,4 +165,7 @@ header {
 }
 #home_mapping.section .cta {
 	color: #fff;
+}
+#home_mapping.section .cta a {
+	opacity: 1;
 }

@@ -1,8 +1,6 @@
 
 <?php
-function page() {
-	$page_uri = ltrim($_SERVER['REQUEST_URI'], '/');
-	$page = (strlen($page_uri) == 0) ? 'home' : $page_uri;
+function page($page) {
 	include_once('settings.php');
 	$sections = [];
 	$page_settings = (isset($settings['pages'][$page])) ? $settings['pages'][$page] : null;
@@ -26,10 +24,10 @@ function page() {
 	return '<div id="sections">' . implode("\n", $sections) . '</div>';
 }
 
-function head() {
+function head($page) {
 	include_once('head.php');
 }
 
-function foot() {
+function foot($page) {
 	include_once('foot.php');
 }
