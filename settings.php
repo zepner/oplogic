@@ -70,7 +70,7 @@ $settings['pages'] = [
 						'rel' => 'home:methodology:p',
 						'class' => 'cta'
 					],
-					'value' => '<a href="/methodology">Read more about How That Works <span class="action">&rarr;</span></a>'
+					'value' => '<a href="/methodology">Read more about How That Works</a> <span class="action">&rarr;</span>'
 				]
 			],
 			'mapping' => [
@@ -80,7 +80,7 @@ $settings['pages'] = [
 					],
 					'value' => 'Business Logic Mapping'
 				],
-				'h5' => [
+				'p' => [
 					'attrs' => [
 						'rel' => 'home:mapping:p'
 					],
@@ -91,7 +91,7 @@ $settings['pages'] = [
 						'rel' => 'home:mapping:p',
 						'class' => 'cta'
 					],
-					'value' => '<a href="/methodology">Read more about How It Works <span class="action">&rarr;</span></a>'
+					'value' => '<a href="/methodology">Learn more about this process</a> <span class="action">&rarr;</span>'
 				]
 			],
 			'partner' => [
@@ -121,9 +121,10 @@ $settings['pages'] = [
 				]
 			],
 			'stories' => [
-				'h2' => [
+				'h1' => [
 					'attrs' => [
-						'rel' => 'home:stories:h2'
+						'rel' => 'home:stories:h1',
+						'class' => 'red'
 					],
 					'value' => 'Client Stories'
 				],
@@ -131,6 +132,12 @@ $settings['pages'] = [
 					'attrs' => [
 						'rel' => 'home:stories:p'					],
 					'value' => 'Automation that directly trims the time it takes for employees to accomplish their tasks, providing increased reliability and job satisfaction.'
+				],
+				'hr' => [
+					'attrs' => [
+						'rel' => 'home:stories:hr'
+					],
+					'value' => ''
 				],
 				'div-0' => [
 					'attrs' => [
@@ -158,7 +165,7 @@ $settings['pages'] = [
 						'rel' => 'home:stories:cta',
 						'class' => 'cta'
 					],
-					'value' => '<a href="/clients">See More Happy Clients <span class="action">&rarr;</span></a>'
+					'value' => '<a href="/clients">See More Happy Clients</a> <span class="action">&rarr;</span>'
 				]
 			],
 			'recommendations' => [
@@ -167,6 +174,12 @@ $settings['pages'] = [
 						'rel' => 'home:recommendations:h2'
 					],
 					'value' => 'Highly Recommended'
+				],
+				'p' => [
+					'attrs' => [
+						'rel' => 'home:recommendations:p'
+					],
+					'value' => 'Automation that directly trims the time it takes for employees to accomplish their tasks, providing increased reliability and job satisfaction.'
 				]
 			]
 		]
