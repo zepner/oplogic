@@ -38,8 +38,8 @@ $menu = get_menu($page);
 			</div>
 			<div class="gray section contact" id="footer_contact">
 				<div class="section-inner">
-					<br/>&nbsp;
-					<p><img src="img/blur.jpg" data-src="img/gray-dots.png" class="lazy" style="float:right; margin-right:100px" width="244" height="200" /></p>
+					<br/>&nbsp;<br/>&nbsp;
+					<p class="contact-dots"><img src="img/blur.jpg" data-src="img/gray-dots.png" class="lazy" style="float:right; margin-right:100px" width="244" height="200" /></p>
 					<h2 rel="footer:contact:h2" class="red nomargin bold500">We're Ready.</h2>
 					<h3 rel="footer:contact:h2" class="nomargin">Send a Message.</h3>
 					<p rel="footer:contact:p"><a class="red bold" href="mailto:business@operationallogic.com">Business@OperationalLogic.com</a></p>
