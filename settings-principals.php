@@ -16,7 +16,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'principals:lead:h4'
 			],
-			'value' => 'Defining your real technology needs. Documenting your business process bottom-up to write your custom software for maximum efficiency.'
+			'value' => 'Documenting existing business processes from the ground up for software that helps your team achieve optimal efficiency.'
 		]
 	],
 	'lead-follow' => [
@@ -33,7 +33,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'principals:lead-follow:h5'
 			],
-			'value' => 'Every organization needs to track inventory, complete deliveries, and automate processes. Proudly delivering software that works to save companies time and money for over 20 years.'
+			'value' => 'Every organization needs to track people, time and materials - not many take the time to automate their processes. We proudly build software that has saved our clients time and money for over 20 years.'
 		],
 		'div' => [
 			'attrs' => [
@@ -67,7 +67,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'principals:partner-zvi:img'
 			],
-			'value' => '<img style="float:right; max-width:50%; margin-left:2rem;border-radius: 10rem;" src="img/blur.jpg" data-src="img/zvi-epner.jpg" class="lazy" width="376" height="500" />'
+			'value' => '<img style="float:right; max-width:40%;width=300px;margin-left:2rem;border-radius: 10rem;" src="img/blur.jpg" data-src="img/zvi-epner.jpg" class="lazy" width="376" height="500" />'
 		],
 		'h2' => [
 			'attrs' => [
