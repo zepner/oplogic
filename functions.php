@@ -11,7 +11,19 @@ function page($page) {
 	}
 
 	$sects = [];
+	$page_settings = $sections['settings']; // todo: integrate
+	unset($sections['settings']);
 	foreach ($sections as $key => $value) {
+		$section_settings = $value['settings'];
+		unset($value['settings']);
+		$arrSectionSettings = [];
+		// Prep section settings.
+		foreach ($section_settings as $attr => $attr_value) {
+			if ($attr == 'class') {
+				$attr_value .= ' section ' . $key;
+			}
+			$arrSectionSettings[] = $attr . '="' . $attr_value . '"';
+		}
 		$tags = [];
 		foreach ($value as $k => $v) {
 			$attrs = [];
@@ -21,7 +33,7 @@ function page($page) {
 			$tag = (strpos($k, '-')) ? explode('-', $k)[0] : $k;
 			$tags[] = "\n" . '<' . $tag . ' ' . implode(' ', $attrs) . '>' . $v['value'] . '</' . $tag . '>';
 		}
-		$sects[] = "\n" . '<div class="section ' . $key . '" id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
+		$sects[] = "\n" . '<div ' . implode(" ", $arrSectionSettings) . ' id="' . $page . '_' . $key . '"><div class="section-inner">' . implode("\n", $tags) . '</div></div>';
 	}
 
 	return '<div id="sections">' . implode("\n", $sects) . '</div>';

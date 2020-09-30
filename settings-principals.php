@@ -1,21 +1,28 @@
 <?php
 $sections = [
+	'settings' => [
+	],
 	'lead' => [
+		'settings' => [
+			'class' => 'brown'
+		],
 		'h1' => [
 			'attrs' => [
 				'rel' => 'principals:lead:h1'
 			],
 			'value' => 'Operations Partner & Developer'
 		],
-		'h5' => [
+		'h4' => [
 			'attrs' => [
-				'rel' => 'principals:lead:p',
-				'class' => 'white'
+				'rel' => 'principals:lead:h4'
 			],
 			'value' => 'Defining your real technology needs. Documenting your business process bottom-up to write your custom software for maximum efficiency.'
 		]
 	],
 	'lead-follow' => [
+		'settings' => [
+			'class' => 'white'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'principals:lead-follow:h2'
@@ -24,16 +31,18 @@ $sections = [
 		],
 		'h5' => [
 			'attrs' => [
-				'rel' => 'principals:lead-follow:p'
+				'rel' => 'principals:lead-follow:h5'
 			],
 			'value' => 'Every organization needs to track inventory, complete deliveries, and automate processes. Proudly delivering software that works to save companies time and money for over 20 years.'
 		]
 	],
 	'partner-zvi' => [
+		'settings' => [
+			'class' => 'gray'
+		],
 		'h2' => [
 			'attrs' => [
-				'rel' => 'principals:partner-zvi:h2',
-				'class' => 'red'
+				'rel' => 'principals:partner-zvi:h2'
 			],
 			'value' => 'Zvi Epner, Principal'
 		],
@@ -45,6 +54,9 @@ $sections = [
 		]
 	],
 	'license-free' => [
+		'settings' => [
+			'class' => 'white'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'principals:license-free:h2'
@@ -59,6 +71,9 @@ $sections = [
 		]
 	],
 	'mapping' => [
+		'settings' => [
+			'class' => 'brown'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'principals:mapping:h2'
@@ -67,8 +82,7 @@ $sections = [
 		],
 		'p' => [
 			'attrs' => [
-				'rel' => 'principals:mapping:p',
-				'class' => 'white'
+				'rel' => 'principals:mapping:p'
 			],
 			'value' => 'You\'ll work with a systems architect to map out all of the entities that make up your operation as well as how each part is connected to the whole. <br><br>Then we set up a series of business rules that govern roles and permissions.'
 		],
@@ -81,6 +95,9 @@ $sections = [
 		]
 	],
 	'methodology' => [
+		'settings' => [
+			'class' => 'gray'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'principals:methodology:h2',

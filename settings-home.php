@@ -1,6 +1,11 @@
 <?php
 $sections = [
+	'settings' => [
+	],
 	'lead' => [
+		'settings' => [
+			'class' => 'brown'
+		],
 		'h1' => [
 			'attrs' => [
 				'rel' => 'home:lead:h1'
@@ -9,7 +14,7 @@ $sections = [
 		],
 		'h4' => [
 			'attrs' => [
-				'rel' => 'home:lead:p'
+				'rel' => 'home:lead:h4'
 			],
 			'value' => 'We help trim the time spent on daily tasks by automating steps that humans shouldn\'t be doing anyway.'
 		],
@@ -22,6 +27,9 @@ $sections = [
 		]
 	],
 	'lead-follow' => [
+		'settings' => [
+			'class' => 'white'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'home:lead_follow:h2'
@@ -49,6 +57,9 @@ $sections = [
 		]
 	],
 	'methodology' => [
+		'settings' => [
+			'class' => 'gray'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'home:methodology:h2',
@@ -77,6 +88,9 @@ $sections = [
 		]
 	],
 	'mapping' => [
+		'settings' => [
+			'class' => 'brown'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'home:mapping:h2'
@@ -85,8 +99,7 @@ $sections = [
 		],
 		'p' => [
 			'attrs' => [
-				'rel' => 'home:mapping:p',
-				'class' => 'white'
+				'rel' => 'home:mapping:p'
 			],
 			'value' => 'You\'ll work with a systems architect to map out all of the entities that make up your operation as well as how each part is connected to the whole. <br><br>Then we set up a series of business rules that govern roles and permissions.'
 		],
@@ -99,6 +112,9 @@ $sections = [
 		]
 	],
 	'partner' => [
+		'settings' => [
+			'class' => 'white center'
+		],
 		'h2-0' => [
 			'attrs' => [
 				'rel' => 'home:partner:h2'
@@ -125,6 +141,9 @@ $sections = [
 		]
 	],
 	'stories' => [
+		'settings' => [
+			'class' => 'gray'
+		],
 		'h1' => [
 			'attrs' => [
 				'rel' => 'home:stories:h1',
@@ -139,7 +158,8 @@ $sections = [
 		],
 		'hr' => [
 			'attrs' => [
-				'rel' => 'home:stories:hr'
+				'rel' => 'home:stories:hr',
+				'class' => 'thick'
 			],
 			'value' => ''
 		],
@@ -149,19 +169,19 @@ $sections = [
 				'id' => 'stories'
 			],
 			'value' => "\n" . '<div class="story">
-							<p class="client">FTDI</p>
-							<p class="task">Working with operations teams...</p>
-							<p class="action">&rarr;</p>
+							<p class="client bold500">FTDI</p>
+							<p class="task">Working with operations teams & floor managers to map every process to develop efficiencies through automation.</p>
+							<p class="action red lpad">&rarr;</p>
 						</div>
 						<div class="story">
-							<p class="client">Colorado.gov</p>
-							<p class="task">Helping engineering team migrate...</p>
-							<p class="action">&rarr;</p>
+							<p class="client bold500">Colorado.gov</p>
+							<p class="task">Instructed the site engineering team on platform migration of all sites after indexing all content and site operations.</p>
+							<p class="action red lpad">&rarr;</p>
 						</div>
 						<div class="story">
-							<p class="client">Time Inc</p>
-							<p class="task">Trimming minutes off of the editing process...</p>
-							<p class="action">&rarr;</p>
+							<p class="client bold500">Time Inc</p>
+							<p class="task">Helped develop shortcuts and toolsets for the People.com team to make it easier to publish and distribute content packages.</p>
+							<p class="action red lpad">&rarr;</p>
 						</div>' . "\n"
 		],
 		'div-1' => [
@@ -169,21 +189,48 @@ $sections = [
 				'rel' => 'home:stories:cta',
 				'class' => 'cta'
 			],
-			'value' => '<a href="/clients">See More Happy Clients</a> <span class="action">&rarr;</span>'
+			'value' => '<a href="/methodology">See More Happy Clients</a> <span class="action">&rarr;</span>'
 		]
 	],
 	'recommendations' => [
+		'settings' => [
+			'class' => 'white center'
+		],
 		'h2' => [
 			'attrs' => [
 				'rel' => 'home:recommendations:h2'
 			],
-			'value' => 'Highly Recommended'
+			'value' => 'Highly recommended'
 		],
 		'p' => [
 			'attrs' => [
-				'rel' => 'home:recommendations:p'
+				'rel' => 'home:recommendations:p',
+				'class' => 'xl nomargin'
 			],
-			'value' => 'Custom automation software built from the ground up to increase efficiency at every level.'
+			'value' => '&darr;'
+		],
+		'div' => [
+			'attrs' => [
+				'rel' => 'home:recommendations:div',
+				'class' => ''
+			],
+			'value' => '<div class="reco">
+							<h4 class="statement red bold500">"Always looking for a better solution and excels with out of the box thinking. I cannot recommend highly enough."</h4>
+							<p class="name">Ian Jones</p>
+							<p class="position">Marketing Tech</p>
+						</div>'
+		]
+	],
+	'who' => [
+		'settings' => [
+			'class' => 'white center nopad'
+		],
+		'p' => [
+			'attrs' => [
+				'rel' => 'home:who:p',
+				'class' => ''
+			],
+			'value' => '<a href="/principals">Who Are We?</a>'
 		]
 	]
 ];
