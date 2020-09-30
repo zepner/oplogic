@@ -162,7 +162,8 @@ header {
 }
 
 .section.brown {
-	background-color: #211E1A;
+	/*background-color: #211E1A;*/
+	background-color: #272522;
 }
 .section.lead.brown h1 {
 	color: #de3158;
