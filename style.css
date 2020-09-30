@@ -142,11 +142,13 @@ header {
 .section {
 	background-color: #ededed;
 	padding: 8% 20px;
+	clear: both;
 }
 .section-inner {
 	max-width: 900px;
 	width: 100%;
 	margin: auto;
+	position: relative;
 }
 .section.center {
     text-align: center;
@@ -175,7 +177,7 @@ header {
 }
 
 .section.brown {
-	background-color: #211E1A;	
+	background-color: #211E1A;
 }
 .section.lead.brown h1 {
 	color: #de3158;
@@ -227,6 +229,8 @@ header {
 	display: none;
 }
 
+/* Footer */
+
 /* Home */
 #stories {
 	width: 90%;
@@ -245,4 +249,32 @@ header {
 }
 #stories .story .lpad {
 	padding-left: 1rem;
+}
+
+#home_lead.section.lead {
+	background-image: url('img/red-dots-lg.png');
+	background-repeat: no-repeat;
+	background-position: 170% center;
+	background-size: 50%;
+}
+
+.section.split-img {
+	height: 200px;
+}
+.section.split-img .section-inner {
+	max-width: 100%;
+}
+.section.split-img img {
+	z-index: 2;
+	margin: auto auto auto 10%;
+	display: block;
+	position: absolute;
+}
+.section.split-img span.splitter {
+	position: absolute;
+    display: block;
+    height: 95px;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
 }

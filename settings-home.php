@@ -56,6 +56,18 @@ $sections = [
 			'value' => '<a href="/clients">Here\'s how we helped FTDI West</a> <span class="action">&rarr;</span>'
 		]
 	],
+	'split-img' => [
+		'settings' => [
+			'class' => 'white-gray-split nopad'
+		],
+		'div' => [
+			'attrs' => [
+				'rel' => 'home:split-img:div',
+				'class' => 'nopad nomargin splitter'
+			],
+			'value' => '<span class="splitter"></span><img src="img/blur.jpg" data-src="img/black-dots-lg.png" class="lazy" width="308" height="197" />'
+		]
+	],
 	'methodology' => [
 		'settings' => [
 			'class' => 'gray'
@@ -126,7 +138,7 @@ $sections = [
 				'rel' => 'home:partner:img',
 				'id' => 'partner_img'
 			],
-			'value' => '<img src="img/partner_photo.png" />'
+			'value' => '<img src="img/ops-tech-venn-img.png" />'
 		],
 		'h2-1' => [
 			'attrs' => [
