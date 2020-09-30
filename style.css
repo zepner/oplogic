@@ -19,7 +19,7 @@ h2 { font-size: 4rem; }
 h3 { font-size: 3rem; }
 h4, h5, h6 { font-size: 1.8rem; line-height: 1.4; font-weight: normal; }
 h5 { font-size: 1.4rem; }
-p, li, span, td { font-size: 1.4rem; }
+p, li, td { font-size: 1.4rem; }
 a {
 	color: inherit;
 }
@@ -33,7 +33,7 @@ a {
 	h3 { font-size: 2rem; }
 	h4, h5, h6 { font-size: 1.4rem; line-height: 1.3;  }
 	h5 { opacity: 0.65; font-size: 1.3rem; }
-	p, li, span, td { font-size: 1.2rem; }
+	p, li, td { font-size: 1.2rem; }
 }
 
 .red { /*color: #AE2141 !important;*/ color: #de3158 !important; }
@@ -182,9 +182,6 @@ header {
 .section.gray {
 	background-color: #ededed;	
 }
-.section.gray h2 {
-	color: #de3158;
-}
 
 .section.white {
 	background-color: #fff;	
@@ -224,10 +221,11 @@ header {
 	#footer_contact .contact-dots {
 		display: none;
 	}
+	footer .section.split-img img {
+		margin-left: auto;
+	}
 }
-footer .section.split-img img {
-	margin-left: auto;
-}
+
 
 /* Home */
 #stories {

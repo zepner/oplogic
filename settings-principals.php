@@ -27,7 +27,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'principals:lead-follow:h2'
 			],
-			'value' => '20 Years of Results'
+			'value' => '20 Years of <span class="red">Results</span>'
 		],
 		'h5' => [
 			'attrs' => [
@@ -44,7 +44,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'principals:partner-zvi:h2'
 			],
-			'value' => 'Zvi Epner, Principal'
+			'value' => 'Zvi Epner, <span class="red">Principal</span>'
 		],
 		'h5' => [
 			'attrs' => [
@@ -96,7 +96,7 @@ $sections = [
 	],
 	'methodology' => [
 		'settings' => [
-			'class' => 'gray'
+			'class' => 'white'
 		],
 		'h2' => [
 			'attrs' => [
