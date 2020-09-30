@@ -10,7 +10,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'home:lead:h1'
 			],
-			'value' => 'Business process documention and automation.'
+			'value' => 'Business process automation.'
 		],
 		'h4' => [
 			'attrs' => [
