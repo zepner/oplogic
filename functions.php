@@ -7,7 +7,14 @@ function page($page) {
 	if (file_exists($page_settings)) {
 		include $page_settings;
 	} else {
-		return '<h1>404: Page not found.</h1>';
+		return '<div id="sections">
+					<div class="brown section lead" id="home_lead">
+						<div class="section-inner">
+							<h1 class="nomargin bold">404</h1>
+							<p>Page not found.. <br>Please use the menu above to navigate to an existing page.</p>
+						</div>
+					</div>
+				</div>';
 	}
 
 	$sects = [];
