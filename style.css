@@ -54,7 +54,7 @@ hr.thick {
 	border-width: 5px;
 	border-style: solid;
 }
-img { max-width: 100%; height: auto; }
+img { max-width: 100%; height: auto; vertical-align: middle; }
 
 
 header {
@@ -260,6 +260,18 @@ header {
 	background-repeat: no-repeat;
 	background-position: 170% center;
 	background-size: 50%;
+}
+
+/* Who */
+#principals_lead-follow .brand-images {
+	width: 80%;
+	margin: auto;
+	vertical-align: middle;
+	text-align: center;
+}
+#principals_lead-follow .brand-images img {
+	vertical-align: middle;
+	margin: 0 1rem;
 }
 
 /* Split image bg */

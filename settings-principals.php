@@ -21,7 +21,7 @@ $sections = [
 	],
 	'lead-follow' => [
 		'settings' => [
-			'class' => 'white'
+			'class' => 'white center'
 		],
 		'h2' => [
 			'attrs' => [
@@ -34,6 +34,17 @@ $sections = [
 				'rel' => 'principals:lead-follow:h5'
 			],
 			'value' => 'Every organization needs to track inventory, complete deliveries, and automate processes. Proudly delivering software that works to save companies time and money for over 20 years.'
+		],
+		'div' => [
+			'attrs' => [
+				'rel' => 'principals:lead-follow:brands',
+				'class' => 'brand-images'
+			],
+			'value' => '<img class="lazy" src="img/blur.jpg" data-src="img/brands/colorado-gov.png" />
+						<img class="lazy" src="img/blur.jpg" data-src="img/brands/natgeo.png" />
+						<img class="lazy" src="img/blur.jpg" data-src="img/brands/nbc-news.png" />
+						<img class="lazy" src="img/blur.jpg" data-src="img/brands/reading-is-fundamental.png" />
+						<img class="lazy" src="img/blur.jpg" data-src="img/brands/animal-planet.png" />'
 		]
 	],
 	'partner-zvi' => [
