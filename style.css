@@ -217,12 +217,12 @@ header {
 	font-weight: bold;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans;
 }
+footer .section.split-img img {
+	max-width: 90%;
+}
 @media screen and (max-width: 800px) {
 	#footer_contact .contact-dots {
 		display: none;
-	}
-	footer .section.split-img img {
-		margin-left: auto;
 	}
 }
 
@@ -255,7 +255,7 @@ header {
 	padding-left: 1rem;
 }
 
-#home_lead.section.lead {
+.section.lead {
 	background-image: url('img/red-dots-lg.png');
 	background-repeat: no-repeat;
 	background-position: 170% center;

@@ -47,9 +47,27 @@ $sections = [
 						<img class="lazy" src="img/blur.jpg" data-src="img/brands/animal-planet.png" />'
 		]
 	],
+	'split-img' => [
+		'settings' => [
+			'class' => 'white-gray-split nopad'
+		],
+		'div' => [
+			'attrs' => [
+				'rel' => 'home:split-img:div',
+				'class' => 'nopad nomargin splitter'
+			],
+			'value' => '<span class="splitter"></span><img src="img/blur.jpg" data-src="img/black-dots-lg.png" class="lazy" width="308" height="197" />'
+		]
+	],
 	'partner-zvi' => [
 		'settings' => [
 			'class' => 'gray'
+		],
+		'div' => [
+			'attrs' => [
+				'rel' => 'principals:partner-zvi:img'
+			],
+			'value' => '<img style="float:right; max-width:50%; margin-left:2rem;border-radius: 10rem;" src="img/blur.jpg" data-src="img/zvi-epner.jpg" class="lazy" width="376" height="500" />'
 		],
 		'h2' => [
 			'attrs' => [
@@ -62,6 +80,12 @@ $sections = [
 				'rel' => 'principals:partner-zvi:p'
 			],
 			'value' => 'Every industry faces unique challenges. Real business problems are solved by transparent communications and accurate maps. As a consulting partner, it\'s important that we make the right decision for each situation.'
+		],
+		'br' => [
+			'attrs' => [
+				'class' => 'clear'
+			],
+			'value' => ''
 		]
 	],
 	'license-free' => [
