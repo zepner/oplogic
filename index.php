@@ -19,7 +19,7 @@ $menu = get_menu($page);
 	<body>
 		<header>
 			<div class="header-inner">
-				<div id="logo"><span>Op<span>_Logic</span></span></div>
+				<div id="logo"><a href="/"><span>Op<span>_Logic</span></span></a></div>
 				<div id="menu">
 					<ul><?php print $menu; ?></ul>
 					<br class="clear" />

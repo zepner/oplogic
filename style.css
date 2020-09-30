@@ -114,12 +114,11 @@ header {
 	margin-top: 0.3rem;
 	margin-right: 1rem;
 }
+#logo a {
+	text-decoration: none;
+}
 #logo span {
 	font-size: inherit;
-}
-#logo span span {
-	/*opacity: 0.65;*/
-	/*color: #da7aa6;*/
 }
 #menu {
 	float: right;
@@ -219,7 +218,7 @@ header {
 .section.white {
 	background-color: #fff;	
 }
-.section.white h2 {
+.section.white {
 	color: #211E1A;
 }
 
