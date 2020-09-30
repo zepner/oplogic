@@ -10,10 +10,7 @@ $menu = get_menu($page);
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width" />
 	<title><?php print ucwords($page) ?> | Operational Logic</title>
-	<script src="js/yall.min.js"></script>
-	<script>
-	  document.addEventListener("DOMContentLoaded", yall);
-	</script>
+	
 	</head>
 
 	<body>
@@ -60,6 +57,9 @@ $menu = get_menu($page);
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179326813-1"></script>
 		<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-179326813-1');</script>
-
+		<script src="js/yall.min.js"></script>
+	<script>
+	  document.addEventListener("DOMContentLoaded", yall);
+	</script>
 	</body>
 </html>
