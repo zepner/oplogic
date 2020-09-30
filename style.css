@@ -42,6 +42,18 @@ a {
 	/*color: #AE2141 !important;*/
 	color: #de3158 !important;
 }
+.white {
+	color: #fff;
+}
+.fff {
+	color: #fff !important;
+}
+.right {
+	text-align: right;
+}
+.normal {
+	font-weight: normal;
+}
 .clear {
 	clear: both;
 }
@@ -69,6 +81,9 @@ a {
 hr.thick {
 	border-width: 5px;
 	border-style: solid;
+}
+.small {
+	font-size: 0.8rem;
 }
 
 header {
@@ -230,6 +245,11 @@ header {
 }
 
 /* Footer */
+#footer_foot {
+	color: #fff;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans;
+}
 
 /* Home */
 #stories {
@@ -258,6 +278,7 @@ header {
 	background-size: 50%;
 }
 
+/* Split image bg */
 .section.split-img {
 	height: 200px;
 }

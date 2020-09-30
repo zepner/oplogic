@@ -45,6 +45,16 @@ $menu = get_menu($page);
 					<p rel="footer:contact:p"><a class="red bold" href="mailto:business@operationallogic.com">Business@OperationalLogic.com</a></p>
 				</div>
 			</div>
+			<div class="brown section foot" id="footer_foot">
+				<div class="section-inner">
+					<div id="logo"><span>Op<span>_Logic</span></span></div>
+					<div id="menu">
+						<ul><?php print $menu; ?></ul>
+					</div>
+					<br class="clear" />
+					<p class="clear small fff right">&copy; <?php print date("Y"); ?> ZEPNER LLC. All rights reserved.</p>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>
