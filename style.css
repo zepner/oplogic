@@ -126,7 +126,7 @@ header {
 /* Sections */
 .section {
 	background-color: #ededed;
-	padding: 8% 20px;
+	padding: 6% 20px 8%;
 	clear: both;
 }
 .section-inner {
@@ -200,7 +200,7 @@ header {
 }
 .section .cta a {
 	text-decoration: none;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	opacity: 0.8;
 	color: inherit;
 	border-bottom: 1px solid;

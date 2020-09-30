@@ -96,7 +96,7 @@ $sections = [
 				'rel' => 'home:methodology:p',
 				'class' => 'cta'
 			],
-			'value' => '<a href="/methodology">Read more about How That Works</a> <span class="action">&rarr;</span>'
+			'value' => '<a href="/methodology">How That Works</a> <span class="action">&rarr;</span>'
 		]
 	],
 	'mapping' => [
