@@ -96,7 +96,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'principals:license-free:h2'
 			],
-			'value' => 'Bloated ERP – Not Your Best Solution'
+			'value' => 'Bloated ERPs are more expensive than you think'
 		],
 		'h5' => [
 			'attrs' => [
