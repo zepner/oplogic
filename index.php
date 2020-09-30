@@ -10,7 +10,6 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
        header("HTTP/1.1 304 Not Modified");
        exit;
 }
-//echo "This page was last modified: ".date("d.m.Y H:i:s",time());
 include_once('functions.php');
 $page_uri = ltrim($_SERVER['REQUEST_URI'], '/');
 $page = (strlen($page_uri) == 0) ? 'home' : $page_uri;
@@ -24,7 +23,6 @@ $menu = get_menu($page);
 	<title><?php print ucwords($page) ?> | Operational Logic</title>
 	
 	</head>
-
 	<body>
 		<header>
 			<div class="header-inner">
@@ -70,8 +68,8 @@ $menu = get_menu($page);
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179326813-1"></script>
 		<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-179326813-1');</script>
 		<script src="js/yall.min.js"></script>
-	<script>
-	  document.addEventListener("DOMContentLoaded", yall);
-	</script>
+		<script>document.addEventListener("DOMContentLoaded", yall);</script>
+
+		<!-- <?php echo "This page was last modified: ".date("d.m.Y H:i:s",time()); ?> -->
 	</body>
 </html>
