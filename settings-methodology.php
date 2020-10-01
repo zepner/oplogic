@@ -47,7 +47,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'methodology:step1:p'
 			],
-			'value' => 'Don\'t wait to increase cash flow &amp; productivity. <br>You\'ve got operations bottlenecks that can be solved today with a good hard look and a little code. <strong>OpLogic Diagnostics</strong> will help measure the gains that can be acheieved versus the cost to automate.'
+			'value' => 'Don\'t wait to increase cash flow &amp; productivity. <br>You\'ve got operations bottlenecks that can be solved today with a good hard look and a little code. <strong>OpLogic Diagnostics</strong> will help measure the gains that can be achieved versus the cost to automate.'
 		]
 	],
 	'step2' => [
