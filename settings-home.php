@@ -51,7 +51,7 @@ $sections = [
 		'div' => [
 			'attrs' => [
 				'rel' => 'home:lead_follow:cta',
-				'class' => 'cta'
+				'class' => 'cta hide'
 			],
 			'value' => '<a href="/clients">Here\'s how we helped FTDI West</a> <span class="action">&rarr;</span>'
 		]
@@ -183,23 +183,23 @@ $sections = [
 			'value' => "\n" . '<div class="story">
 							<p class="client bold500">FTDI</p>
 							<p class="task">Working with operations teams & floor managers to map every process to develop efficiencies through automation.</p>
-							<p class="action red lpad">&rarr;</p>
+							<p class="action red lpad hide">&rarr;</p>
 						</div>
 						<div class="story">
 							<p class="client bold500">Colorado.gov</p>
 							<p class="task">Instructed the site engineering team on platform migration of all sites after indexing all content and site operations.</p>
-							<p class="action red lpad">&rarr;</p>
+							<p class="action red lpad hide">&rarr;</p>
 						</div>
 						<div class="story">
 							<p class="client bold500">Time Inc</p>
 							<p class="task">Helped develop shortcuts and toolsets for the People.com team to make it easier to publish and distribute content packages.</p>
-							<p class="action red lpad">&rarr;</p>
+							<p class="action red lpad hide">&rarr;</p>
 						</div>' . "\n"
 		],
 		'div-1' => [
 			'attrs' => [
 				'rel' => 'home:stories:cta',
-				'class' => 'cta'
+				'class' => 'cta hide'
 			],
 			'value' => '<a href="/methodology">See More Happy Clients</a> <span class="action">&rarr;</span>'
 		]
