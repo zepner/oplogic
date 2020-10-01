@@ -144,7 +144,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'methodology:step5:p'
 			],
-			'value' => 'Automation is only effective when processes are well-understood and defined in detail. <br><br>OpLogic diligently draws out every step within every workflow to build a custom system built on the elements that make your business work.'
+			'value' => 'Only processes that are understood, can be automated. <br><br>OpLogic diligently draws out every step within every workflow to build a custom system built on the elements that make your business work.'
 		]
 	]
 ];
