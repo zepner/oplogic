@@ -57,6 +57,7 @@ a {
 .nopadtop { padding-top: 1rem; }
 .nopadbottom { padding-bottom: 1rem; }
 .height200 { height: 200px; }
+.opacity5 { opacity: 0.5; }
 hr.thick {
 	border-width: 5px;
 	border-style: solid;
@@ -250,6 +251,7 @@ header {
 .section.split-img#footer_split-img {
 	height: 200px;
 }
+}
 footer .section.split-img img {
 	max-width: 90%;
 }
@@ -352,4 +354,8 @@ a.play-button {
 a.play-button img {
 	height: 100px;
 	width: auto;
+}
+
+.section#principals_split-img {
+	height: 200px;
 }

@@ -61,7 +61,7 @@ $menu = get_menu($page);
 						<ul><?php print $menu; ?></ul>
 					</div>
 					<br class="clear" />
-					<p class="clear small fff right">&copy; <?php print date("Y"); ?> ZEPNER LLC. All rights reserved.</p>
+					<p class="clear small fff opacity5">&copy; <?php print date("Y"); ?> ZEPNER LLC. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>
