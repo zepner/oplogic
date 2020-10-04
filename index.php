@@ -64,7 +64,13 @@ $menu = get_menu($page);
 				</div>
 			</div>
 		</footer>
-		<style><?php print minimizeCSS(file_get_contents('style.css')); ?></style>
+		<?php 
+			if ($_SERVER['HTTP_HOST'] != 'oplogic.local') {
+				print '<style>' . minimizeCSS(file_get_contents('style.css')) . '</style>';
+			} else {
+				print '<link href="style.css" rel="stylesheet"/>';
+			}
+		?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179326813-1"></script>
 		<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-179326813-1');</script>

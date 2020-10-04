@@ -326,6 +326,11 @@ footer .section.split-img img {
 	display: block;
 	position: absolute;
 }
+@media screen and (max-width: 800px) {
+	.section.split-img img {
+		margin: auto;
+	}	
+}
 .section.split-img span.splitter {
 	position: absolute;
     display: block;
