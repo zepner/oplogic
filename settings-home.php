@@ -26,6 +26,18 @@ $sections = [
 			'value' => '<a href="/methodology">Our methodology</a> <span class="action">&rarr;</span>'
 		]
 	],
+	'split-1' => [
+		'settings' => [
+			'class' => 'brown-white-split nopad split-img center'
+		],
+		'div' => [
+			'attrs' => [
+				'rel' => 'home:split-img:div',
+				'class' => 'nopad nomargin splitter'
+			],
+			'value' => '<img src="img/blur.jpg" data-src="img/warehouse-view.jpg" class="lazy" width="732" hright="286" style="margin:auto" /><span class="splitter"></span>'
+		]
+	],
 	'lead-follow' => [
 		'settings' => [
 			'class' => 'white'
@@ -58,7 +70,7 @@ $sections = [
 	],
 	'split-img' => [
 		'settings' => [
-			'class' => 'white-gray-split nopad'
+			'class' => 'white-gray-split nopad height200'
 		],
 		'div' => [
 			'attrs' => [

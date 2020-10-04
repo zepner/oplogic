@@ -12,11 +12,18 @@ $sections = [
 			],
 			'value' => 'Our Approach'
 		],
-		'h4' => [
+		'div' => [
+			'attrs' => [
+				'rel' => 'methodology:lead:video',
+				'class' => 'play-button floatright'
+			],
+			'value' => ''
+		],
+		'p-0' => [
 			'attrs' => [
 				'rel' => 'methodology:lead:h4'
 			],
-			'value' => 'Custom software built around people and the work they do. Organic improvements that can be implemented in a fraction of the time compared to mega-tech ERP providers. <br><br>No licensing fees. <br>Flexible framework. <br>Lasting competitive edge.'
+			'value' => 'Custom software built around people and the work they do. Organic improvements that can be implemented in a fraction of the time compared to mega-tech ERP providers. </p><a class="play-button floatleft" href="https://youtu.be/s1-9dWOka4A" target="_blank"><img src="img/play-button.png" /></a><p>No licensing fees. <br>Flexible framework. <br>Lasting competitive edge.'
 		],
 		'p' => [
 			'attrs' => [
