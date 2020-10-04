@@ -150,7 +150,7 @@ $sections = [
 				'rel' => 'home:partner:img',
 				'id' => 'partner_img'
 			],
-			'value' => '<img src="img/ops-tech-venn-img.png" />'
+			'value' => '<img src="img/ops-tech-venn-img.png" /><br>&nbsp;'
 		],
 		'h2-1' => [
 			'attrs' => [
