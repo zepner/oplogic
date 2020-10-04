@@ -23,7 +23,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'methodology:lead:h4'
 			],
-			'value' => 'Custom software built around people and the work they do. Organic improvements that can be implemented in a fraction of the time compared to mega-tech ERP providers. </p><a class="play-button floatleft" href="https://youtu.be/s1-9dWOka4A" target="_blank"><img src="img/play-button.png" /></a><p>No licensing fees. <br>Flexible framework. <br>Lasting competitive edge.'
+			'value' => 'Custom software built around people and the work they do. Organic improvements that can be implemented in a fraction of the time compared to mega-tech ERP providers. </p><a title="Zvi Epner visits a warehouse in California where he works with clients to optimize their operations by documenting every aspect of the physical space as well as discussing action steps involved in each process." class="play-button floatleft" href="https://youtu.be/s1-9dWOka4A" target="_blank"><img src="img/play-button.png" /></a><p>No licensing fees. <br>Flexible framework. <br>Lasting competitive edge.'
 		],
 		'p' => [
 			'attrs' => [
