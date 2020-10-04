@@ -19,7 +19,7 @@ $menu = get_menu($page);
 ?>
 <html>
 	<head>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" />
 	<meta name="viewport" content="width=device-width" />
 	<title><?php print ucwords($page) ?> | Operational Logic</title>
 	
