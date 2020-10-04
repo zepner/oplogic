@@ -247,6 +247,9 @@ header {
 	font-weight: bold;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans;
 }
+.section.split-img#footer_split-img {
+	height: 200px;
+}
 footer .section.split-img img {
 	max-width: 90%;
 }
@@ -305,9 +308,6 @@ footer .section.split-img img {
 }
 
 /* Split image bg */
-.section.split-img {
-	/*height: 200px;*/
-}
 .section.split-img .section-inner {
 	max-width: 100%;
 }
