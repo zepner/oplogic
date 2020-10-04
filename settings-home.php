@@ -240,8 +240,7 @@ $sections = [
 			],
 			'value' => '<div class="reco">
 							<h4 class="statement red bold500">"Always looking for a better solution and excels with out of the box thinking. I cannot recommend highly enough."</h4>
-							<p class="name">Ian Jones</p>
-							<p class="position">Marketing Tech</p>
+							<p class="name"><strong>Ian Jones</strong>, Northwestern Mutual</p>
 						</div>'
 		]
 	],
