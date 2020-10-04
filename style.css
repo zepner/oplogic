@@ -63,7 +63,14 @@ hr.thick {
 	border-style: solid;
 }
 img { max-width: 100%; height: auto; vertical-align: middle; }
-
+.desktop-only {
+	display: none;
+}
+@media screen and (min-width: 800px) {
+	.desktop-only {
+		display: block;
+	}	
+}
 
 header {
 	position: absolute;

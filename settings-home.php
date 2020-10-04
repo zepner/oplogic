@@ -28,7 +28,7 @@ $sections = [
 	],
 	'split-1' => [
 		'settings' => [
-			'class' => 'brown-white-split nopad split-img center'
+			'class' => 'brown-white-split nopad split-img center desktop-only'
 		],
 		'div' => [
 			'attrs' => [
