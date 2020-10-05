@@ -266,6 +266,10 @@ footer .section.split-img img {
 	#footer_contact .contact-dots {
 		display: none;
 	}
+	footer p a.red.bold {
+		font-weight: 500;
+		font-size: 1rem;
+	}
 }
 
 
@@ -362,6 +366,11 @@ a.play-button {
 	text-align: center;
 	border-radius: 10px;
 	margin-right: 2rem;
+}
+@media screen and (max-width: 475px) {
+	a.play-button {
+		float: none;
+	}
 }
 a.play-button img {
 	height: 100px;
