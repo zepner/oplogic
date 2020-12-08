@@ -14,6 +14,7 @@
     ];
     $slides['intro_2'] = [
         'title' => 'Who am I and Why am I here?',
+        'content' => 'Zvi Epner, Software Architect<br/>OpLogic',
         'color' => '#a2bc3f',
         'image' => 'apple'
     ];
@@ -51,18 +52,18 @@
                 $i++;
                 $active_class = ($i == 1) ? ' active' : '';
                 print "\n\n" . '<div class="product' . $active_class . '" product-id="' . $i . '" product-color="' . $slide['color'] . '">';
+                print "\n" . '<div class="thumbnail"><img src="deck/images/' . $slide['image'] . '.png" alt=""/></div>';
                 print "\n" . '<div class="slider-content">';
                 print '<h1 class="title">' . $slide['title'] . '</h1>';
                 print (isset($slide['content'])) ? '<div class="description">' . $slide['content'] . '</div>' : '';
                 print '</div>';
-                print "\n" . '<div class="thumbnail"><img src="deck/images/' . $slide['image'] . '.png" alt=""/></div>';
                 print "\n" . '</div>';
             }
         ?>
         </div>
-        
+        <div class="footer"><a class="btn" id="prev" href="#" ripple="" ripple-color="#666666">Prev</a><a class="btn" id="next" href="#" ripple="" ripple-color="#666666">Next</a></div>
     </div>
-    <div class="footer"><a class="btn" id="prev" href="#" ripple="" ripple-color="#666666">Prev</a><a class="btn" id="next" href="#" ripple="" ripple-color="#666666">Next</a></div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="deck/app.js" charset="utf-8"></script>
     <body>

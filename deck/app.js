@@ -5,6 +5,8 @@ $(document).ready(function() {
     height: getProductHeight
   });
 
+  animateContentColor();
+
   function calcProductHeight() {
     getProductHeight = $('.product.active').height();
 
@@ -21,11 +23,11 @@ $(document).ready(function() {
     });
 
     $('.title').css({
-      //color: getProductColor
+      color: getProductColor
     });
 
     $('.btn').css({
-      //color: getProductColor
+      color: getProductColor
     });
   }
 

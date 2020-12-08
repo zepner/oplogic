@@ -1,9 +1,10 @@
 /* $base-background: #00CC99; */
 body {
-  background: #a2bc3f;
+  background: #fff;
   color: rgba(0, 0, 0, 0.6);
   font-family: "Roboto", sans-serif;
-  font-size: 36px;
+  font-size: 24px;
+  line-height: 1.2;
   line-height: 1.6em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,8 +15,8 @@ body {
 .btn {
   border-radius: 2px;
   padding: 8px 12px;
-  color: #333;
-  font-size: 14px;
+  color: #fff;
+  font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
@@ -24,10 +25,13 @@ body {
 }
 
 .card {
-  max-width: 90%;
+  background: #FFFFFF;
+  max-width: 600px;
   margin: 100px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-sizing: border-box;
-  padding: 3rem;
+  padding: 48px;
 }
 
 .products {
@@ -45,38 +49,32 @@ body {
   visibility: hidden;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
 }
 .product.active {
   opacity: 1;
   visibility: visible;
 }
 
-.slider-content {
-  width: 50%;
-}
-
 .thumbnail {
-  max-width: 40%;
-  vertical-align: middle;
+  margin: 0 0 48px;
+  text-align: center;
 }
 .thumbnail img {
-  max-height: 500px;
-  width: auto;
+  max-width: 300px;
+  height: auto;
 }
 
 .title {
-  margin: 0 0 3rem;
-  color: #333;
-  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.10);
+  margin: 0 0 12px;
+  font-size: 2.4rem;
   line-height: 1.2;
-  /* mix-blend-mode: color-dodge; */
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .description {
-  margin: 0 0 3rem 2rem;
+  margin: 0 0 48px;
 }
 
 .footer {
@@ -88,48 +86,4 @@ body {
   -webkit-box-pack: justify;
           justify-content: space-between;
   margin: 0 -12px -12px;
-  padding: 0 2rem
-}
-
-[ripple] {
-  z-index: 1;
-  position: relative;
-  overflow: hidden;
-}
-[ripple] .ripple {
-  position: absolute;
-  background: #FFFFFF;
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-animation: ripple 2s;
-          animation: ripple 2s;
-}
-
-@-webkit-keyframes ripple {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 0.2;
-  }
-  100% {
-    -webkit-transform: scale(20);
-            transform: scale(20);
-    opacity: 0;
-  }
-}
-
-@keyframes ripple {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 0.2;
-  }
-  100% {
-    -webkit-transform: scale(20);
-            transform: scale(20);
-    opacity: 0;
-  }
 }
