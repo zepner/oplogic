@@ -16,7 +16,7 @@ $sections = [
 			'attrs' => [
 				'rel' => 'contact:lead:h4'
 			],
-			'value' => 'Barbara Jaynes'
+			'value' => 'Zvi Epner'
 		],
 		'p' => [
 			'attrs' => [
@@ -24,7 +24,7 @@ $sections = [
 			],
 			'value' => 'Business Development<br>
 				<a href="mailto:business@operationallogic.com">business@operationallogic.com</a><br>
-				<a href="tel:3039937124">303-993-7124</a>'
+				<a href="tel:7206960501">(720) 696-0501</a>'
 		]
 	],
 	'lead-follow' => [
