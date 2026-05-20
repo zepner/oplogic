@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Authority Builder — Done-For-You Backlinks by OpLogic</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface-elevated: #181820;
+      --border: #272730;
+      --text: #e8e8ec;
+      --text-secondary: #8a8a95;
+      --text-muted: #5a5a65;
+      --accent: #D64933;
+      --accent-hover: #c43d28;
+      --accent-glow: rgba(214, 73, 51, 0.15);
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --white: #ffffff;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --max-width: 1100px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      padding: 1rem 0;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo::before {
+      content: "\25C6";
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 10rem 2rem 6rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-elevated);
+      border-color: var(--text-muted);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    /* Problem Section */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .problem-visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .search-result {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      opacity: 0.4;
+    }
+
+    .search-result.active {
+      opacity: 1;
+      background: rgba(214, 73, 51, 0.05);
+      border-left: 3px solid var(--accent);
+    }
+
+    .search-result:last-child {
+      border-bottom: none;
+    }
+
+    .result-rank {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      min-width: 2rem;
+    }
+
+    .result-content h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .result-content p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .result-badge {
+      margin-left: auto;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: var(--surface-elevated);
+      color: var(--text-secondary);
+    }
+
+    .result-badge.paid {
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--success);
+    }
+
+    /* Hard List */
+    .hard-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hard-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .hard-item:hover {
+      border-color: var(--text-muted);
+      transform: translateX(4px);
+    }
+
+    .hard-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--surface-elevated);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .hard-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .hard-content p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Solution Highlight */
+    .solution-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-highlight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .solution-highlight h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .solution-highlight p {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Table */
+    .deliverables-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 2rem;
+    }
+
+    .deliverables-table th {
+      text-align: left;
+      padding: 1rem 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .deliverables-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .deliverables-table td:first-child {
+      font-weight: 600;
+      width: 30%;
+    }
+
+    .deliverables-table td:last-child {
+      color: var(--text-secondary);
+    }
+
+    .deliverables-table tr:hover td {
+      background: var(--surface);
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--text-muted);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    .pricing-card.featured::before {
+      content: "Most Popular";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .pricing-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      min-height: 2.5rem;
+    }
+
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .pricing-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features li {
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pricing-features li::before {
+      content: "\2713";
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .pricing-card .btn-primary,
+    .pricing-card .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .pricing-card.featured .btn-secondary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .pricing-card.featured .btn-secondary:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Pipeline */
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
+
+    .pipeline-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .pipeline-step::after {
+      content: "\2192";
+      position: absolute;
+      right: -0.8rem;
+      top: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .pipeline-step:last-child::after {
+      display: none;
+    }
+
+    .step-number {
+      width: 3rem;
+      height: 3rem;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 auto 0.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .pipeline-step:hover .step-number {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Guarantee */
+    .guarantee-box {
+      background: rgba(34, 197, 94, 0.05);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .guarantee-icon {
+      font-size: 3rem;
+      flex-shrink: 0;
+    }
+
+    .guarantee-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--success);
+    }
+
+    .guarantee-content p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Who For */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .who-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .who-card:hover {
+      border-color: var(--success);
+      background: rgba(34, 197, 94, 0.03);
+    }
+
+    .who-card.yes {
+      border-left: 3px solid var(--success);
+    }
+
+    .who-card.no {
+      border-left: 3px solid var(--text-muted);
+      opacity: 0.7;
+    }
+
+    .who-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .who-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, var(--accent-glow), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    .urgency-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--warning);
+      margin-bottom: 2rem;
+    }
+
+    .cta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto 0;
+      text-align: left;
+    }
+
+    .cta-box ol {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      padding-left: 1.25rem;
+      line-height: 2;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    /* Band sections */
+    .band {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+
+      .problem-grid,
+      .pricing-grid,
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .pipeline-step::after {
+        content: "\2193";
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -1.5rem;
+        transform: translateX(-50%);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .guarantee-box {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 8rem;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+  <base target="_blank">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">OpLogic: Local Authority Builder</a>
+      <div class="nav-links">
+        <a href="#problem">The Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#pipeline">How It Works</a>
+        <a href="#contact" class="nav-cta" style="color: var(--white);">Claim Your Pilot Slot</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      Only 3 pilot slots available this quarter
+    </div>
+    <h1>The done-for-you backlink system that puts your business on the map</h1>
+    <p class="hero-subtitle">
+      You have a website. Maybe it's even a nice one. But when someone in your
+      area searches for what you do, you're not there. We fix that—with real
+      links from real publishers, not spam directories.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="btn-primary">
+        Start the 90-Day Pilot
+        <span>&#8594;</span>
+      </a>
+      <a href="#pipeline" class="btn-secondary">
+        See How It Works
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span>&#9889; 8&#8211;12 quality links in 90 days</span>
+      <span>&#128737; Minimum 6 links guaranteed</span>
+      <span>&#129302; AI precision + human oversight</span>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section id="problem">
+    <div class="section-header">
+      <div class="section-label">01 / The Problem</div>
+      <h2>Your competitor is on page one. You're not.</h2>
+      <p class="section-desc">Meanwhile, the business with worse reviews and
+        higher prices is capturing the clicks. Why? Google trusts them more.</p>
+    </div>
+    <div class="problem-grid">
+      <div>
+        <p
+          style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem;">
+          The single biggest trust signal Google uses is whether other <strong
+            style="color: var(--text);">real, relevant websites link to
+            yours</strong>. Not your social media. Not your ads. Links from
+          actual publishers, local organizations, and industry sites.
+        </p>
+        <p
+          style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem;">
+          Those links are <strong style="color: var(--text);">digital
+            referrals</strong>. And right now, you don't have enough of them.
+        </p>
+        <div
+          style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; font-size: 0.9rem; color: var(--text-secondary);">
+          <strong style="color: var(--text);">The math is simple:</strong> 85%
+          of domains we audit get rejected before any effort is spent. The 15%
+          that survive are where your growth lives.
+        </div>
+      </div>
+      <div class="problem-visual">
+        <div class="search-result active">
+          <span class="result-rank">#1</span>
+          <div class="result-content">
+            <h4>Your Competitor Inc.</h4>
+            <p>47 reviews &#183; 4.2 stars &#183; 12 referring domains</p>
+          </div>
+          <span class="result-badge paid">Paid</span>
+        </div>
+        <div class="search-result active">
+          <span class="result-rank">#2</span>
+          <div class="result-content">
+            <h4>Another Competitor LLC</h4>
+            <p>23 reviews &#183; 3.9 stars &#183; 8 referring domains</p>
+          </div>
+          <span class="result-badge">Organic</span>
+        </div>
+        <div class="search-result">
+          <span class="result-rank">#8</span>
+          <div class="result-content">
+            <h4 style="color: var(--accent);">Your Business</h4>
+            <p>62 reviews &#183; 4.8 stars &#183; 2 referring domains</p>
+          </div>
+          <span class="result-badge">Organic</span>
+        </div>
+        <div class="search-result">
+          <span class="result-rank">&#8212;</span>
+          <div class="result-content">
+            <h4>Page 2+</h4>
+            <p>Where most qualified leads never look</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Is Hard -->
+  <section class="band">
+    <div class="section-header">
+      <div class="section-label">02 / The Reality</div>
+      <h2>Why building local authority is brutally hard</h2>
+      <p class="section-desc">Getting quality links at local scale requires a
+        full-time operation most businesses can't sustain.</p>
+    </div>
+    <div class="hard-list">
+      <div class="hard-item">
+        <div class="hard-icon">&#128269;</div>
+        <div class="hard-content">
+          <h4>Finding hundreds of relevant websites</h4>
+          <p>Manually mapping your competitor's backlink landscape takes 20+
+            hours of research before the first email is sent.</p>
+        </div>
+      </div>
+      <div class="hard-item">
+        <div class="hard-icon">&#10003;</div>
+        <div class="hard-content">
+          <h4>Auditing each one for real traffic and credibility</h4>
+          <p>Most "link building" services skip this. We reject 85% of domains
+            before any outreach begins.</p>
+        </div>
+      </div>
+      <div class="hard-item">
+        <div class="hard-icon">&#9993;</div>
+        <div class="hard-content">
+          <h4>Writing personalized outreach to editors</h4>
+          <p>Template emails get ignored. Real pitches require understanding
+            each site's audience and content gaps.</p>
+        </div>
+      </div>
+      <div class="hard-item">
+        <div class="hard-icon">&#128172;</div>
+        <div class="hard-content">
+          <h4>Negotiating placement terms and pricing</h4>
+          <p>Our AI-assisted pricing averages <strong
+              style="color: var(--text);">38% below first
+              quote</strong>&#8212;but only with persistent, professional
+            follow-up.</p>
+        </div>
+      </div>
+      <div class="hard-item">
+        <div class="hard-icon">&#128202;</div>
+        <div class="hard-content">
+          <h4>Monitoring that links stay live over time</h4>
+          <p>Links break. Sites change owners. Content gets removed. Without
+            monitoring, your investment evaporates.</p>
+        </div>
+      </div>
+    </div>
+    <div
+      style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--border);">
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+        That's <strong style="color: var(--text);">100+ hours per
+          month</strong>. Most agencies charge $3,000+/month and hire junior VAs
+        who ghost or deliver links from spam directories that <strong
+          style="color: var(--accent);">hurt more than help</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section id="solution">
+    <div class="section-header">
+      <div class="section-label">03 / The Solution</div>
+      <h2>Agency-quality links. You deal with me. The system does the grunt
+        work.</h2>
+    </div>
+    <div class="solution-highlight">
+      <h3>I run a system that automates the heavy lifting</h3>
+      <p>Discovery, auditing, qualification, outreach, negotiation, placement,
+        and monitoring&#8212;with AI precision. Then I review every placement
+        personally, negotiate every deal, and report to you in plain English.
+      </p>
+      <a href="#pricing" class="btn-primary">View the 90-Day Pilot &#8594;</a>
+    </div>
+
+    <div style="margin-top: 4rem;">
+      <div class="section-header">
+        <div class="section-label">04 / Deliverables</div>
+        <h2>What you get: The 90-Day Pilot</h2>
+        <p class="section-desc">Result: 8&#8211;12 quality backlinks from real,
+          relevant websites in 90 days.</p>
+      </div>
+      <table class="deliverables-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>What Happens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Setup &amp; Strategy</td>
+            <td>Custom prospecting for your niche and region</td>
+          </tr>
+          <tr>
+            <td>Discovery</td>
+            <td>AI maps your competitor's backlink landscape</td>
+          </tr>
+          <tr>
+            <td>Audit</td>
+            <td>Quality filter: real traffic, real relevance, no spam</td>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td>Premium analysis on survivors&#8212;only the best move forward
+            </td>
+          </tr>
+          <tr>
+            <td>Outreach</td>
+            <td>Personalized pitches, one contact per site</td>
+          </tr>
+          <tr>
+            <td>Negotiation</td>
+            <td>AI-assisted pricing that averages 38% below first quote</td>
+          </tr>
+          <tr>
+            <td>Placement</td>
+            <td>Content written, submitted, published, live</td>
+          </tr>
+          <tr>
+            <td>Monitoring</td>
+            <td>Link health alerts&#8212;404s, nofollow changes, removals</td>
+          </tr>
+          <tr>
+            <td>Reporting</td>
+            <td>Monthly dashboard: what we got, where it ranks, what changed
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="band">
+    <div class="section-header">
+      <div class="section-label">05 / Investment</div>
+      <h2>Transparent pricing. No hidden fees. No junior VAs.</h2>
+      <p class="section-desc">Pilot pricing limited to 3 new clients per
+        quarter.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">90-Day Pilot</div>
+        <div class="pricing-desc">First-time clients. Proof of concept. Full
+          pipeline access.</div>
+        <div class="pricing-price">$2,400</div>
+        <div class="pricing-note">$800/month &#183; One-time pilot</div>
+        <ul class="pricing-features">
+          <li>8&#8211;12 quality backlinks</li>
+          <li>Full 7-stage pipeline</li>
+          <li>Monthly reporting</li>
+          <li>Link health monitoring</li>
+          <li>Personal oversight by Zvi</li>
+        </ul>
+        <a href="#contact" class="btn-secondary">Start Pilot</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-name">Ongoing Done-For-You</div>
+        <div class="pricing-desc">Set it and forget it. Continuous growth and
+          authority building.</div>
+        <div class="pricing-price">$1,500<span>/mo</span></div>
+        <div class="pricing-note">Monthly recurring &#183; Cancel anytime</div>
+        <ul class="pricing-features">
+          <li>Everything in Pilot</li>
+          <li>Continuous link acquisition</li>
+          <li>Priority placement</li>
+          <li>Quarterly strategy reviews</li>
+          <li>Competitor tracking</li>
+        </ul>
+        <a href="#contact" class="btn-secondary">Choose Growth</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Done-With-You</div>
+        <div class="pricing-desc">You want transparency + monthly strategy
+          calls.</div>
+        <div class="pricing-price">$900<span>/mo</span></div>
+        <div class="pricing-note">Monthly recurring &#183; Strategy included
+        </div>
+        <ul class="pricing-features">
+          <li>Everything in Pilot</li>
+          <li>Monthly strategy calls</li>
+          <li>Shared dashboard access</li>
+          <li>Process transparency</li>
+          <li>Learning transfer</li>
+        </ul>
+        <a href="#contact" class="btn-secondary">Get Transparency</a>
+      </div>
+    </div>
+
+    <div class="guarantee-box">
+      <div class="guarantee-icon">&#128737;</div>
+      <div class="guarantee-content">
+        <h3>The Guarantee</h3>
+        <p><strong>Minimum 6 published links in 90 days.</strong> If I don't
+          deliver, you don't pay the final month. I eat the cost. No fine print.
+          No excuses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="pipeline">
+    <div class="section-header">
+      <div class="section-label">06 / Process</div>
+      <h2>The 7-Stage Pipeline</h2>
+      <p class="section-desc">By the time a domain reaches negotiation, it has
+        survived six gates. The quality at the bottom reflects the filtering at
+        every stage above.</p>
+    </div>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="step-number">1</div>
+        <div class="step-label">Discover</div>
+        <div class="step-desc">AI maps competitor backlinks</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-number">2</div>
+        <div class="step-label">Audit</div>
+        <div class="step-desc">85% rejected immediately</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-number">3</div>
+        <div class="step-label">Qualify</div>
+        <div class="step-desc">Traffic &amp; authority check</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-number">4</div>
+        <div class="step-label">Pitch</div>
+        <div class="step-desc">Personalized outreach</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-number">5</div>
+        <div class="step-label">Negotiate</div>
+        <div class="step-desc">AI-assisted pricing</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-number">6</div>
+        <div class="step-label">Place</div>
+        <div class="step-desc">Content &amp; publication</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-number">7</div>
+        <div class="step-label">Monitor</div>
+        <div class="step-desc">Health tracking &amp; alerts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="band">
+    <div class="section-header">
+      <div class="section-label">07 / Fit</div>
+      <h2>Who this is for (and who it's not)</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card yes">
+        <h4>&#10003; Local service businesses</h4>
+        <p>Home services, professional services, health/wellness&#8212;any
+          business that relies on Google for customer acquisition.</p>
+      </div>
+      <div class="who-card yes">
+        <h4>&#10003; Owners burned by agencies</h4>
+        <p>You've tried blogging, ads, or SEO agencies with disappointing
+          results. You want something that actually moves the needle.</p>
+      </div>
+      <div class="who-card yes">
+        <h4>&#10003; Active websites</h4>
+        <p>You have a live site and a clear customer profile. You're ready to
+          invest in authority, not just traffic.</p>
+      </div>
+      <div class="who-card no">
+        <h4>&#10007; E-commerce with 10,000+ SKUs</h4>
+        <p>This system is built for local authority, not product catalog scale.
+        </p>
+      </div>
+      <div class="who-card no">
+        <h4>&#10007; Brand-new businesses</h4>
+        <p>If you don't have a website yet, build that first. Come back when
+          you're ready for authority.</p>
+      </div>
+      <div class="who-card no">
+        <h4>&#10007; "Page one overnight" seekers</h4>
+        <p>This is a 90-day pilot. Real links take real time. If you need
+          instant results, this isn't for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-section" id="contact">
+    <div class="section-label" style="color: var(--accent);">08 / Next Step
+    </div>
+    <h2>Your Next Step</h2>
+    <p>Only 3 pilot slots available this quarter. Reply to the email or text
+      <strong style="color: var(--text);">PILOT</strong> to get started.</p>
+
+    <div class="urgency-pill">
+      <span class="pulse" style="background: var(--warning);"></span>
+      2 of 3 slots remaining this quarter
+    </div>
+
+    <div
+      style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+      <a href="mailto:zvi@operationallogic.com?subject=Local Authority Builder - Pilot Inquiry"
+        class="btn-primary">
+        Email Zvi &#8594;
+      </a>
+      <a href="sms:7206960501?body=PILOT" class="btn-secondary">
+        Text PILOT to (720) 696-0501
+      </a>
+    </div>
+
+    <div class="cta-box">
+      <p
+        style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+        <strong style="color: var(--text);">What happens next:</strong>
+      </p>
+      <ol>
+        <li>5-minute questionnaire to confirm we're a fit</li>
+        <li>20-minute call to review your current backlink profile</li>
+        <li>Custom strategy proposal for your first 90 days</li>
+        <li>First links live within 14 days of kickoff</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p
+      style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-secondary);">
+      OpLogic</p>
+    <p>Operational systems for local business growth.</p>
+    <p style="margin-top: 1rem;">
+      <a href="mailto:zvi@operationallogic.com">zvi@operationallogic.com</a>
+      &#183;
+      <a href="tel:7206960501">(720) 696-0501</a> &#183;
+      <a href="https://operationallogic.com">operationallogic.com</a>
+    </p>
+    <p style="margin-top: 1.5rem; font-size: 0.75rem;">
+      Presented by Zvi Epner &#183; Louisville, Colorado
+    </p>
+  </footer>
+
+</body>
+
+</html>
