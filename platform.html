@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform — Op Logic</title>
+  <link rel="canonical" href="https://www.operationallogic.com/platform.html">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Fragment+Mono:wght@400;700&family=Goldman:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    /* ===== PLATFORM-SPECIFIC STYLES ===== */
+
+    /* Platform Hero */
+    .platform-hero {
+      position: relative;
+      width: 100%;
+      min-height: 70vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 4rem;
+      overflow: hidden;
+      background: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    .platform-hero-bg {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      z-index: -2;
+      transform: scale(1.15);
+      transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .platform-hero.revealed .platform-hero-bg {
+      transform: scale(1);
+    }
+
+    .platform-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: -1;
+    }
+
+    .platform-hero .container {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+      width: 100%;
+    }
+
+    .platform-hero .breadcrumb {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .platform-hero .breadcrumb::after {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .platform-hero h1 {
+      font-family: 'Geist', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 400;
+      color: var(--color-white);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+      letter-spacing: -0.04em;
+    }
+
+    .platform-hero p {
+      font-family: 'Geist', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 700px;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    /* Problem Statement Section */
+    .problem-statement {
+      background: var(--color-light);
+      color: var(--color-dark);
+      padding: 6rem 0;
+    }
+
+    .problem-statement .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    .problem-statement .breadcrumb {
+      color: var(--color-dark);
+      margin-bottom: 3rem;
+      width: 100%;
+    }
+
+    .problem-statement .breadcrumb::after {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .problem-statement h2 {
+      font-family: 'Geist', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.3;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .problem-statement p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      color: #555;
+    }
+
+    /* Core Functions Section */
+    .core-functions {
+      background: var(--color-white);
+      color: var(--color-dark);
+      padding: 6rem 0;
+    }
+
+    .core-functions .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    .core-functions .breadcrumb {
+      color: var(--color-dark);
+      margin-bottom: 3rem;
+      width: 100%;
+    }
+
+    .core-functions .breadcrumb::after {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .core-functions h2 {
+      font-family: 'Geist', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.3;
+      max-width: 900px;
+      margin-bottom: 4rem;
+      letter-spacing: -0.04em;
+    }
+
+    .functions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+    .function-card {
+      padding: 3rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .function-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .function-card h3 {
+      font-family: 'Geist', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .function-card .function-description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .function-card .benefits-label {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .function-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .function-card ul li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .function-card ul li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: var(--color-dark);
+      font-weight: 700;
+    }
+
+    /* Integration Section */
+    .integration {
+      position: relative;
+      width: 100%;
+      padding: 6rem 0;
+      color: var(--color-white);
+      overflow: hidden;
+    }
+
+    .integration-bg {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop') center/cover no-repeat;
+      z-index: -2;
+      transform: scale(1.15);
+      transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .integration.revealed .integration-bg {
+      transform: scale(1);
+    }
+
+    .integration-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .integration .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .integration .breadcrumb {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    .integration .breadcrumb::after {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .integration h2 {
+      font-family: 'Geist', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.3;
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .integration p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      opacity: 0.85;
+      margin-bottom: 1rem;
+    }
+
+    .integration .no-replace {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.6;
+      margin-top: 2rem;
+    }
+
+    /* For Operators Section */
+    .for-operators {
+      background: var(--color-accent);
+      color: var(--color-dark);
+      padding: 6rem 0;
+    }
+
+    .for-operators .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    .for-operators .breadcrumb {
+      color: var(--color-dark);
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    .for-operators .breadcrumb::after {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .for-operators h2 {
+      font-family: 'Geist', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.3;
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .for-operators p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      color: #333;
+    }
+
+    .operator-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      max-width: 700px;
+    }
+
+    .operator-role {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 3px;
+    }
+
+    /* Results Section */
+    .results {
+      background: var(--color-dark);
+      color: var(--color-white);
+      padding: 6rem 0;
+    }
+
+    .results .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    .results .breadcrumb {
+      color: var(--color-white);
+      margin-bottom: 3rem;
+      width: 100%;
+    }
+
+    .results .breadcrumb::after {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .results h2 {
+      font-family: 'Geist', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.3;
+      max-width: 800px;
+      margin-bottom: 3rem;
+      letter-spacing: -0.04em;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .result-item {
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .result-stat {
+      font-family: 'Geist', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.04em;
+    }
+
+    .result-label {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.7;
+    }
+
+    .results .closing-line {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      max-width: 700px;
+      margin-top: 3rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    /* CTA Section */
+    .platform-cta {
+      position: relative;
+      width: 100%;
+      padding: 8rem 0;
+      color: var(--color-white);
+      text-align: center;
+      overflow: hidden;
+      background: var(--color-dark);
+    }
+
+    .platform-cta-bg {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      z-index: -2;
+      transform: scale(1.1);
+      opacity: 0;
+      transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.8s ease;
+    }
+
+    .platform-cta.revealed .platform-cta-bg {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .platform-cta-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .platform-cta .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .platform-cta .breadcrumb {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .platform-cta h2 {
+      font-family: 'Geist', sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .platform-cta p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.85;
+    }
+
+    .btn-platform-cta {
+      background: rgba(158, 158, 158, 0.4);
+      color: var(--color-white);
+      backdrop-filter: blur(5px);
+      font-size: 1rem;
+      padding: 1rem 2.5rem;
+      border-radius: 3px;
+    }
+
+    .btn-platform-cta:hover {
+      background: rgba(158, 158, 158, 0.6);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .functions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .platform-hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .platform-hero {
+        min-height: 60vh;
+      }
+
+      .platform-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .problem-statement h2,
+      .core-functions h2,
+      .integration h2,
+      .for-operators h2,
+      .results h2,
+      .platform-cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .function-card {
+        padding: 2rem;
+      }
+
+      .platform-cta h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .platform-hero .container,
+      .problem-statement .container,
+      .core-functions .container,
+      .integration .container,
+      .for-operators .container,
+      .results .container,
+      .platform-cta .container {
+        padding: 0 1rem;
+      }
+
+      .platform-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">OP LOGIC</a>
+
+      <nav class="header-nav" id="headerNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="contact.html" class="nav-link">Book a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PLATFORM HERO -->
+  <section class="platform-hero" id="platform-hero">
+    <div class="platform-hero-bg"></div>
+    <div class="platform-hero-overlay"></div>
+    <div class="container">
+      <span class="breadcrumb hero-breadcrumb">Platform</span>
+      <h1>The OpLogic Platform</h1>
+      <p>Turn tribal knowledge into a scalable operating system. Capture how
+        work actually gets done, identify opportunities for improvement, and
+        automate execution across departments.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM STATEMENT -->
+  <section class="problem-statement" id="problem">
+    <div class="container">
+      <span class="breadcrumb breadcrumb-dark">The Problem</span>
+      <h2>Most companies run on spreadsheets, disconnected software,
+        undocumented processes, and a handful of people who know how everything
+        works.</h2>
+      <p>That works — until it doesn't. The OpLogic Platform replaces reliance
+        on memory, workarounds, and manual effort with a documented, measurable,
+        continuously improving system.</p>
+    </div>
+  </section>
+
+  <!-- CORE FUNCTIONS -->
+  <section class="core-functions" id="functions">
+    <div class="container">
+      <span class="breadcrumb breadcrumb-dark">One Platform. Four Core
+        Functions.</span>
+      <h2>Four functions that transform how your business operates.</h2>
+
+      <div class="functions-grid">
+        <div class="function-card">
+          <h3>Process Intelligence</h3>
+          <p class="function-description">Document workflows, decision points,
+            approvals, exceptions, and dependencies. Build a living map of your
+            business operations that survives employee turnover and creates a
+            foundation for optimization.</p>
+          <span class="benefits-label">Benefits</span>
+          <ul>
+            <li>Preserve institutional knowledge</li>
+            <li>Standardize execution</li>
+            <li>Reduce training time</li>
+            <li>Reveal hidden inefficiencies</li>
+          </ul>
+        </div>
+
+        <div class="function-card">
+          <h3>Automation Engine</h3>
+          <p class="function-description">Eliminate repetitive tasks, duplicate
+            data entry, and manual handoffs. Connect existing systems and create
+            workflows that move information automatically between departments,
+            vendors, customers, and software platforms.</p>
+          <span class="benefits-label">Benefits</span>
+          <ul>
+            <li>Reduce labor costs</li>
+            <li>Minimize errors</li>
+            <li>Accelerate throughput</li>
+            <li>Increase operational capacity</li>
+          </ul>
+        </div>
+
+        <div class="function-card">
+          <h3>Operational Visibility</h3>
+          <p class="function-description">Track the metrics that actually drive
+            business performance. Monitor throughput, cycle times, bottlenecks,
+            service levels, labor utilization, and financial impact in real
+            time.</p>
+          <span class="benefits-label">Benefits</span>
+          <ul>
+            <li>Faster decision-making</li>
+            <li>Early issue detection</li>
+            <li>Improved accountability</li>
+            <li>Better forecasting</li>
+          </ul>
+        </div>
+
+        <div class="function-card">
+          <h3>Continuous Improvement</h3>
+          <p class="function-description">Most software stops after
+            implementation. The OpLogic Platform is designed to support ongoing
+            optimization. As processes evolve, opportunities for improvement are
+            identified, measured, prioritized, and implemented.</p>
+          <span class="benefits-label">Benefits</span>
+          <ul>
+            <li>Continuous cost reduction</li>
+            <li>Sustainable growth</li>
+            <li>Process maturity</li>
+            <li>Higher business valuation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATION -->
+  <section class="integration" id="integration">
+    <div class="integration-bg"></div>
+    <div class="integration-overlay"></div>
+    <div class="container">
+      <span class="breadcrumb">Built Around Your Systems</span>
+      <h2>The platform is designed to work with the tools you already use.</h2>
+      <p>Whether your business relies on ERP systems, warehouse software, CRM
+        platforms, spreadsheets, custom applications, or third-party services —
+        the OpLogic Platform connects information and workflows into a single
+        operational framework.</p>
+      <p class="no-replace">No rip-and-replace projects. No expensive software
+        migrations. Just better execution.</p>
+    </div>
+  </section>
+
+  <!-- FOR OPERATORS -->
+  <section class="for-operators" id="operators">
+    <div class="container">
+      <span class="breadcrumb breadcrumb-dark">Designed for Operators</span>
+      <h2>Built for people responsible for outcomes.</h2>
+      <p>Operations leaders. Business owners. Warehouse managers. Service
+        managers. Department heads. People who need visibility into what is
+        happening, confidence in what comes next, and a practical path toward
+        improvement.</p>
+      <div class="operator-roles">
+        <span class="operator-role">Operations Leaders</span>
+        <span class="operator-role">Business Owners</span>
+        <span class="operator-role">Warehouse Managers</span>
+        <span class="operator-role">Service Managers</span>
+        <span class="operator-role">Department Heads</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results" id="results">
+    <div class="container">
+      <span class="breadcrumb">What Success Looks Like</span>
+      <h2>Companies using the OpLogic approach typically achieve:</h2>
+
+      <div class="results-grid">
+        <div class="result-item">
+          <div class="result-stat">20–50%</div>
+          <div class="result-label">Reduction in targeted workflow costs</div>
+        </div>
+        <div class="result-item">
+          <div class="result-stat">Faster</div>
+          <div class="result-label">Cycle times across key processes</div>
+        </div>
+        <div class="result-item">
+          <div class="result-stat">Fewer</div>
+          <div class="result-label">Operational errors and rework</div>
+        </div>
+        <div class="result-item">
+          <div class="result-stat">Better</div>
+          <div class="result-label">Employee onboarding and knowledge transfer
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="result-stat">Improved</div>
+          <div class="result-label">Visibility across departments</div>
+        </div>
+        <div class="result-item">
+          <div class="result-stat">Scalable</div>
+          <div class="result-label">Capacity without proportional headcount
+            growth</div>
+        </div>
+      </div>
+
+      <p class="closing-line">The result is a business that scales through
+        systems rather than heroics.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="platform-cta" id="cta">
+    <div class="platform-cta-bg"></div>
+    <div class="platform-cta-overlay"></div>
+    <div class="container">
+      <span class="breadcrumb">See the Platform in Action</span>
+      <h2>Every business is different.</h2>
+      <p>Schedule a consultation and we'll walk through your current operation,
+        identify improvement opportunities, and demonstrate how the OpLogic
+        Platform can support your goals.</p>
+      <a href="contact.html" class="btn btn-platform-cta">Book a
+        Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-section">
+          <span class="breadcrumb">Contact</span>
+          <h4>Let's Get Started</h4>
+          <div class="footer-cta">
+            <a href="contact.html" class="btn">Request A Quote</a>
+          </div>
+        </div>
+
+        <div class="footer-section footer-menu">
+          <div style="display: flex; gap: 4rem;">
+            <div>
+              <h5>Main</h5>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#what-we-do">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="platform.html">Platform</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-section footer-address">
+          <h5>Address</h5>
+          <p>
+            Louisville,<br>
+            CO 80027
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/oplogic-limited/"
+            class="social-link" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+        <div class="footer-logo">OL</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    const hero = document.getElementById('platform-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      if (window.scrollY > heroBottom - 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Intersection Observer for background image reveal effects
+    const revealOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, revealOptions);
+
+    // Observe sections with background images
+    document.querySelectorAll('.platform-hero, .integration, .platform-cta').forEach(section => {
+      revealObserver.observe(section);
+    });
+  </script>
+
+</body>
+
+<!-- Google tag (gtag.js) -->
+<script async
+  src="https://www.googletagmanager.com/gtag/js?id=G-ZCMZN5CDNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-ZCMZN5CDNJ');
+</script>
+
+</html>
